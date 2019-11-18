@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-API_TOKEN = os.getenv("API_TOKEN1")
+API_TOKEN = os.getenv("API_TOKEN")
 
 if API_TOKEN == None:
     raise Exception("No token provided!")

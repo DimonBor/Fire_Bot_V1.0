@@ -19,7 +19,7 @@ dp = Dispatcher(bot)
 async def send_welcome(message: types.Message):
     await message.reply( 
         "Hi!\n"
-        "I'm Fire spamming Bot!\n"
+        "I'm Fire Spamming Bot!\n"
         "I have been made by DimonBor.\n"
         "<i>Check /help to learn how to use me.</i>"
         )

@@ -4,10 +4,13 @@ import call_module
 from aiogram import Bot, Dispatcher, executor, types
 
 API_TOKEN = 'YOUR_TOKEN'
+
+
 lst = []
 white_list = [
-    "YOUR_NUMBER",
+    "YOUR_NUMBER"
 ]
+
 logging.basicConfig(level=logging.INFO)
 
 
@@ -64,6 +67,9 @@ async def sms_service_cmd(message):
     lst.append(element)
     num = lst[0]
     iterations = int(lst[1])
+    if num in white_list:
+        await message.reply("Yeah, NO! This number in White List.")
+        return
     if iterations > 20:
         iterations = 20
     await message.reply(f'Starting SMS Srevice for \n {num}')

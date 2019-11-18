@@ -3,8 +3,8 @@ import sms_module
 import call_module
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = 'YOUR_TOKEN'
 
+API_TOKEN = 'YOUR_TOKEN'
 
 lst = []
 white_list = [
@@ -25,7 +25,7 @@ async def send_welcome(message: types.Message):
         "I'm Fire Spamming Bot!\n"
         "I have been made by DimonBor.\n"
         "<i>Check /help to learn how to use me.</i>"
-        )
+    )
 
 
 @dp.message_handler(commands=['help'])
@@ -33,14 +33,13 @@ async def show_help(message):
     await message.reply(
         "I see that you want to know, how it works.\n"
         "Well:\n"
-        "1.Call Service. Light troll))).\n"
+        "1.Call Service. .\n"
         "<b>    Usage:</b>\n"
         "<i>    /call YOUR_NUMBER</i>\n"
-        "2.SMS service. Most powerful weapon\n"
+        "2.SMS service.\n"
         "<b>    Usage:</b>\n"
-        "<i>    /sms YOUR_NUMBER INTERATONS</i>\n"
-        "<i>    Example: /sms 0991112222 20</i>\n"
-        "P.S Iterations must be less then 20."
+        "<i>    /sms YOUR_NUMBER</i>\n"
+        "<i>    Example: /sms 0991112222</i>"
     )
 
 
@@ -56,24 +55,12 @@ async def call_service_cmd(message):
 
 @dp.message_handler(commands=['sms'])
 async def sms_service_cmd(message):
-    string = str(message.get_args())
-    element = str()
-    for i in string:
-        if str(i) != " ":
-            element += str(i)
-        else:
-            lst.append(element)
-            element = str("")
-    lst.append(element)
-    num = lst[0]
-    iterations = int(lst[1])
+    num = message.get_args()
     if num in white_list:
         await message.reply("Yeah, NO! This number in White List.")
         return
-    if iterations > 20:
-        iterations = 20
-    await message.reply(f'Starting SMS Srevice for \n {num}')
-    sms_module.sms_service(num, iterations)
+    await message.reply(f'Someone writing to you, \n {num}')
+    sms_module.sms_service(num)
 
 
 @dp.message_handler()

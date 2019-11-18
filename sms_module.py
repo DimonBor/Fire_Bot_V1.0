@@ -1,8 +1,7 @@
 import requests
 import time
-
-
-def sms_service(number, iterations):
+import types
+def sms_service(number):
     headers = {
         'content-type': 'application/json',
         'x-app-token': 'yF27jwg5orUVo4abrops',
@@ -10,6 +9,4 @@ def sms_service(number, iterations):
 
     data = '{"identity": "'+number+'"}'
 
-    for i in range(iterations):
-        response = requests.post('https://my.citrus.ua/api/auth/login', headers=headers, data=data)
-        time.sleep(1)
+    response = requests.post('https://my.citrus.ua/api/auth/login', headers=headers, data=data)

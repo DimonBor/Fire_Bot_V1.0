@@ -1,8 +1,7 @@
 import requests
-
-
-def call_service(number):
-        
+import types
+@types.coroutine
+def call_service(number): 
     headers = {
         'authority': 'my.citrus.ua',
         'x-locale': 'ru',
@@ -19,10 +18,8 @@ def call_service(number):
         'accept-encoding': 'gzip, deflate, br',
         'accept-language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,uk;q=0.6',
     }
-
     params = (
         ('hcode', 'b5f7ac4514f7c0a1133fb71ffcc99f1b'),
         ('phone', number),
     )
-
     response = requests.get('https://my.citrus.ua/hunter/', headers=headers, params=params)

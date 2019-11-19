@@ -1,6 +1,5 @@
 import requests
 import time
-import types
 def sms_service(number):
     headers = {
         'content-type': 'application/json',

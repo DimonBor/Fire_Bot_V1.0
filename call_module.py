@@ -1,6 +1,4 @@
 import requests
-import types
-@types.coroutine
 def call_service(number): 
     headers = {
         'authority': 'my.citrus.ua',

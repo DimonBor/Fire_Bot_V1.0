@@ -2,9 +2,15 @@ import logging
 import sms_module
 import call_module
 from aiogram import Bot, Dispatcher, executor, types
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
-API_TOKEN = 'YOUR_TOKEN'
+API_TOKEN = os.getenv("API_TOKEN")
+
+if API_TOKEN == None:
+    raise Exception("No token provided!")
 
 lst = []
 white_list = [

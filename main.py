@@ -33,7 +33,7 @@ async def show_help(message):
     await message.reply(
         "I see that you want to know, how it works.\n"
         "Well:\n"
-        "1.Call Service. .\n"
+        "1.Call Service.\n"
         "<b>    Usage:</b>\n"
         "<i>    /call YOUR_NUMBER</i>\n"
         "2.SMS service.\n"

@@ -1,6 +1,4 @@
 import requests
-import types
-@types.coroutine
 def call_service(number): 
     params = (
         ('hcode', 'b5f7ac4514f7c0a1133fb71ffcc99f1b'),
